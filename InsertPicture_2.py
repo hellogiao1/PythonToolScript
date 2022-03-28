@@ -35,6 +35,12 @@ class readwrite_excel(wpsTool.ReadWrite_excel):
                                + temp[temp.find("【") + 1:temp.find("】")]
                                + temp[temp.find("】") + 1:])
                 wpsTool.Write_Doc(wordPath, picturePath, row_dic)
+            elif wordPath:
+                print("word路径：" + wordPath)
+                temp = row_dic["充电设备安装地址"]
+                if temp.find("【") != -1 and temp.rfind("】") != -1:
+                    row_dic["充电设备停车位"] = temp[temp.find("【") + 1:temp.find("】")]
+                wpsTool.Write_Doc(wordPath, picturePath, row_dic)
             elif not picturePath and not wordPath:
                 print("未找到\"" + apply_name + "\"的图片和Word文档")
             elif not wordPath:
