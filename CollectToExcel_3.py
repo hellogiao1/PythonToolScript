@@ -1,5 +1,4 @@
 import os
-import docx
 import time
 import wpsTool
 
@@ -41,8 +40,6 @@ if __name__ == '__main__':
     print('一共找到' + str(len(currDir_list[0])) + '个Word文档', str(len(currDir_list[2])) + '张图片')
     excel_file = currDir_list[1]
     print("Excel表路径为：" + excel_file)
-    # os.path.join(os.getcwd(), '上海XXXX充电条件信息导入一览表模板（2021-11-3）.xlsx')
-    # r'E:\Python\上海XXXX充电条件信息导入一览表模板（2021-11-3）.xlsx'
     # test(currDir_list[0])
     LoopInsertData(currDir_list[0], excel_file)
 
